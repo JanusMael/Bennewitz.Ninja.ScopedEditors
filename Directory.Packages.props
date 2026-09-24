@@ -9,10 +9,12 @@
   </ItemGroup>
 
   <ItemGroup Label="UI">
-    <!-- Carried at the versions OpenForge2k had these projects on when they moved, so the first
-         published version is the shape that was already building there. -->
-    <PackageVersion Include="Avalonia" Version="12.1.0" />
-    <PackageVersion Include="Avalonia.Controls.DataGrid" Version="12.1.0" />
+    <!-- Avalonia 12.1.3 for the fix that lets a UI Automation client read a list's selection on
+         Windows (AvaloniaUI/Avalonia#22151). DataGrid has no 12.1.3; 12.1.2 is its newest. Semi
+         stays at the version OpenForge2k had these projects on when they moved.
+         ⚠ trimcheck/expected-warnings.txt comes from DataGrid: re-read it whenever DataGrid moves. -->
+    <PackageVersion Include="Avalonia" Version="12.1.3" />
+    <PackageVersion Include="Avalonia.Controls.DataGrid" Version="12.1.2" />
     <PackageVersion Include="Semi.Avalonia" Version="12.1.0" />
     <PackageVersion Include="Semi.Avalonia.DataGrid" Version="12.1.0" />
   </ItemGroup>
@@ -30,9 +32,9 @@
     <!-- The family's own markup rules, run as tests over the markup this repository ships. -->
     <PackageVersion Include="Bennewitz.Ninja.XamlQuality" Version="2026.3.922" />
     <!-- The headless platform for the ported Avalonia tests. ⚠ Pinned to the SAME version as Avalonia
-         above: the original suite used 12.1.2, which would pull Avalonia 12.1.2 transitively against
-         the libraries' 12.1.0 and trip central transitive pinning. -->
-    <PackageVersion Include="Avalonia.Headless" Version="12.1.0" />
+         above: a newer one pulls a newer Avalonia transitively against the libraries' pin and trips
+         central transitive pinning, as the original suite's 12.1.2 did against 12.1.0. -->
+    <PackageVersion Include="Avalonia.Headless" Version="12.1.3" />
     <!-- ⚠ Same Microsoft.Testing.Platform line as xunit.v3 3.2.2 (1.9.1). A NEWER TrxReport pins
          the platform above what xunit's bundled MSBuild extension can load, and the failure reads
          as an unrelated loader error. -->
