@@ -1,5 +1,12 @@
 # Bennewitz.Ninja.ScopedEditors
 
+> **This repository has moved, and is archived.** Bennewitz.Ninja.ScopedEditors is developed in
+> [Bennewitz.Ninja.AppKit](https://github.com/JanusMael/Bennewitz.Ninja.AppKit) since 2026-11-06,
+> beside AppServices and DiffView, with this repository's whole history. Its README is
+> [docs/scopededitors.md](https://github.com/JanusMael/Bennewitz.Ninja.AppKit/blob/main/docs/scopededitors.md)
+> there. The package ids are unchanged; their releases are tagged `scopededitors/vYYYY.Q.MMDD` there.
+> Issues and pull requests go there. This README is kept as it was below, since released packages
+> link to this repository.
 Schema-driven property editors for structured data whose values can be set at more than one scope,
 where one scope overrides another. The model records which scope each value came from and annotates
 it with a severity; the view-models present it without referencing any UI framework; the Avalonia
